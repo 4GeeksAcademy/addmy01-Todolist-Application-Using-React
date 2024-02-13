@@ -1,24 +1,55 @@
+import { useState } from "react";
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSquare, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
+	const [inputValue, setInputValue] = useState("");
+	const [todos, setTodos] = useState([]);
+
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className=" container">
+			<div className="card">
+				<h1 className="text-center">todos</h1>
+				<ul>
+					<li >
+						<input 
+							type="text"
+							onChange={(e) => setInputValue(e.target.value)}
+							value={inputValue}
+							onKeyDown={(e) => {
+								if (e.key === "Enter") {
+									setTodos([...todos, inputValue]);
+									setInputValue("");
+								}
+							}}
+							placeholder="What needs to done?"
+						/>
+					</li>
+					<div>
+						{todos.map((item, index) => (
+							<li key={index} className="card-footer d-flex justify-content-between">
+								{item}
+								<button type="button" className="btn-close" aria-label="Close" onClick={() => setTodos(todos.filter((item, currentIndex) => index != currentIndex))}></button>
+
+								
+							</li>
+						))}
+					</div>
+				</ul>
+
+				<div className="m-2 card-footer">
+					{todos.length === 0 ? (
+						<p>No item left</p>
+					) : (
+						<p>{todos.length} items left</p>
+					)}
+				</div>
+			</div>
 		</div>
 	);
 };
