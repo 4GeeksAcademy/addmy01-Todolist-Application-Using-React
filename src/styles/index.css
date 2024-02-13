@@ -15,12 +15,17 @@
 */
 body {
     margin-top: 100px;
+
 }
 
+header{
+    text-align: center;
+    color: rgb(244, 149, 149);
+    font-size: 80px;
+}
 ul li{
-
     list-style: none;
-    margin-right: 45px;
+    margin-right: 50px;
 }
 
 input {

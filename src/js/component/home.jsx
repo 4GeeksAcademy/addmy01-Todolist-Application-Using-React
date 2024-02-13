@@ -14,10 +14,12 @@ const Home = () => {
 	return (
 		<div className=" container">
 			<div className="card">
-				<h1 className="text-center">todos</h1>
+				<header>
+					todos
+				</header>
 				<ul>
 					<li >
-						<input 
+						<input
 							type="text"
 							onChange={(e) => setInputValue(e.target.value)}
 							value={inputValue}
