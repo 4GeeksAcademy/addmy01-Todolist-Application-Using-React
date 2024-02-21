@@ -13,9 +13,10 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
-body {
+.main {
     margin-top: 100px;
-
+    background-color: rgb(224, 224, 224);
+    padding: 100px;
 }
 
 header{
@@ -23,6 +24,7 @@ header{
     color: rgb(244, 149, 149);
     font-size: 80px;
 }
+
 ul li{
     list-style: none;
     margin-right: 50px;
@@ -33,6 +35,15 @@ input {
     width: 100%;
     
 }
-
-
-
+.output:hover {
+    background-color: #dde1e2; 
+    color: white; 
+  }
+  
+.output{
+ margin-top: 10px;
+}
+.card{
+    margin: 100px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
